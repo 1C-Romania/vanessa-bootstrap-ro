@@ -1,24 +1,24 @@
 * text=auto
+
+*.xml text eol=crlf
 *.htm text eol=crlf
 *.html text eol=crlf
-renames.txt text eol=crlf
 
-*.bsl  text eol=crlf
+*.bsl text eol=crlf
 *.os text eol=crlf
 
-*.xml  text eol=crlf
-*.feature text
 *.md text
+*.rst text
+*.feature text
 *.json text
 
 *.bat text eol=crlf
 *.cmd text eol=crlf
-*.ps1      text eol=crlf
+*.ps1 text eol=crlf
 
 *.sh text eol=lf
 *.groovy text eol=lf
-Form.bin binary
-*.bin binary
+renames.txt text eol=crlf
 
 *.png binary
 *.ico binary
@@ -26,14 +26,17 @@ Form.bin binary
 *.jpeg binary
 
 # Archives
-*.7z       binary
-*.gz       binary
-*.tar      binary
-*.tgz      binary
-*.zip      binary
+*.7z binary
+*.gz binary
+*.tar binary
+*.tgz binary
+*.zip binary
 
 *.cf binary
 *.cfe binary
 *.epf binary
 *.erf binary
+
+*.bin binary
+Form.bin binary
 ParentConfigurations.bin binary
