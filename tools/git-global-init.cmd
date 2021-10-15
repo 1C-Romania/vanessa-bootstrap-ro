@@ -1,8 +1,11 @@
 @echo off
 @chcp 65001
 
-@rem for current user
 
+goto m1
+
+
+@rem for current user
 :GitUserName
 cls
 echo.
@@ -49,8 +52,10 @@ if "%GitEMail%"==" " (echo Make right choice, please!
 cls
 echo.
 echo.
-echo your GitUserName = %GitUserName%
-echo your GitEMail = %GitEMail%
+echo your GitUserName =
+git config user.name
+echo your GitEMail =
+git config user.email
 echo.
 echo Is it correct?
 echo.
@@ -78,10 +83,12 @@ pause
 goto m1
 
 
-:next
 echo on
 git config user.name "%GitUserName%"
 git config user.email %GitEMail%
+
+:next
+echo on
 
 git config core.quotePath false
 
@@ -138,4 +145,29 @@ git config --local diff.renameLimit 1
 git config --local diff.renames false
 
 
+@rem -=-=-=-=-=-=-=-=-=-=-=-=-=-
+%~d0
+cd %~p0..\
+
+del %~p0..\LICENSE
+del %~p0..\README.md
+del %~p0..\cf\README.md
+del %~p0..\cfe\README.md
+del %~p0..\doc\README.md
+del %~p0..\epf\README.md
+del %~p0..\erf\README.md
+del %~p0..\examples\README.md
+del %~p0..\features\README.md
+del %~p0..\fixtures\README.md
+del %~p0..\lib\README.md
+del %~p0..\src\README.md
+del %~p0..\src\cfe\README.md
+del %~p0..\src\epf\README.md
+del %~p0..\src\erf\README.md
+del %~p0..\tests\README.md
+del %~p0..\tools\JSON\README.md
+del %~p0..\tools\README.md
+del %~p0..\vendor\README.md
+
+pause
 :END
