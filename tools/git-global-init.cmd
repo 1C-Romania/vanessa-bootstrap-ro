@@ -1,9 +1,7 @@
 @echo off
 @chcp 65001
 
-
 goto m1
-
 
 @rem for current user
 :GitUserName
@@ -11,7 +9,7 @@ cls
 echo.
 echo.
 echo Enter your UserName for this Git Repository
-echo   (for example - Snitkovski)
+echo   (for example - YourLastName)
 echo.
 set /p GitUserName="Your choice: "
 
@@ -83,12 +81,12 @@ pause
 goto m1
 
 
-echo on
+@echo on
 git config user.name "%GitUserName%"
 git config user.email %GitEMail%
 
 :next
-echo on
+@echo on
 
 git config core.quotePath false
 
@@ -118,6 +116,7 @@ git config --global alias.st status
 @rem for Windows
 git config core.autocrlf true
 @rem git config --loсal core.autocrlf false
+
 @rem git config --loсal core.safecrlf true
 git config core.safecrlf warn
 @rem git config --loсal core.safecrlf false
@@ -130,14 +129,17 @@ git config core.safecrlf warn
 
 git config http.postBuffer 1048576000
 
-@echo.
-@echo do next two lines in Administration mode only (run CMD with Administrator's rights)
+
+@rem -=-=-=-=-=-=-=-=-=-=-=-=-=-
+@rem  do next two lines in Administration mode only (run CMD with Administrator's rights)
 @rem git config --system core.longpaths true
 @rem SET LC_ALL=C.UTF-8
 
 
 @rem -=-=-=-=-=-=-=-=-=-=-=-=-=-
 @rem   from GitSync
+@echo.
+@echo -=-=-=-=-=-=-=-=-=-=-=-=-=-
 git config --local core.quotepath false
 git config --local gui.encoding utf-8
 git config --local i18n.commitEncoding utf-8
@@ -146,28 +148,28 @@ git config --local diff.renames false
 
 
 @rem -=-=-=-=-=-=-=-=-=-=-=-=-=-
-%~d0
-cd %~p0..\
-
-del %~p0..\LICENSE
-del %~p0..\README.md
-del %~p0..\cf\README.md
-del %~p0..\cfe\README.md
-del %~p0..\doc\README.md
-del %~p0..\epf\README.md
-del %~p0..\erf\README.md
-del %~p0..\examples\README.md
-del %~p0..\features\README.md
-del %~p0..\fixtures\README.md
-del %~p0..\lib\README.md
-del %~p0..\src\README.md
-del %~p0..\src\cfe\README.md
-del %~p0..\src\epf\README.md
-del %~p0..\src\erf\README.md
-del %~p0..\tests\README.md
-del %~p0..\tools\JSON\README.md
-del %~p0..\tools\README.md
-del %~p0..\vendor\README.md
+@echo.
+@echo -=-=-=-=-=-=-=-=-=-=-=-=-=-
+del %~d0%~p0..\LICENSE
+del %~d0%~p0..\README.md
+del %~d0%~p0..\cf\README.md
+del %~d0%~p0..\cfe\README.md
+del %~d0%~p0..\doc\README.md
+del %~d0%~p0..\epf\README.md
+del %~d0%~p0..\erf\README.md
+del %~d0%~p0..\examples\README.md
+del %~d0%~p0..\features\README.md
+del %~d0%~p0..\fixtures\README.md
+del %~d0%~p0..\lib\README.md
+del %~d0%~p0..\src\README.md
+del %~d0%~p0..\src\cfe\README.md
+del %~d0%~p0..\src\epf\README.md
+del %~d0%~p0..\src\erf\README.md
+del %~d0%~p0..\tests\README.md
+del %~d0%~p0..\tools\JSON\README.md
+del %~d0%~p0..\tools\README.md
+del %~d0%~p0..\vendor\README.md
+@rem -=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 pause
 :END
